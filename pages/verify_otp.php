@@ -1,4 +1,5 @@
 <?php
+include '../views/navbar.php' ;
 session_start();
 
 // Check if user has valid session data

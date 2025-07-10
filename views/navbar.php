@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg bg-light mb-0">
+    <nav class="navbar navbar-expand-lg bg-light mb-0">
         <div class="container-fluid">
             <img src="https://orientaloutsourcing.com/wp-content/uploads/2020/12/logo-dark.png" alt="" id='img'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -41,6 +41,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php echo ($currentPage == 'register.php') ? 'active' : ''; ?>" href="/my_project/task8/pages/register.php">Registration</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link <?php echo ($currentPage == 'login.php') ? 'active' : ''; ?>" href="/my_project/task8/pages/login.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo ($currentPage == 'logout.php') ? 'active' : ''; ?>" href="/my_project/task8/pages/logout.php">Logout</a>
                     </li>
                 </ul>
             </div>
