@@ -1,6 +1,11 @@
 <?php
 session_start();
 include '../views/navbar.php' ;
+
+// Generate CSRF token - ADD THIS
+if (!isset($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +43,9 @@ include '../views/navbar.php' ;
                 <div id="alert-container"></div>
                 
                 <form id="registrationForm" method="POST">
+                    <!-- ADD CSRF TOKEN -->
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+                    
                     <div class="mb-3">
                         <label for="firstName" class="form-label">First Name</label>
                         <input type="text" class="form-control validate[required,minSize[2]]" id="firstName" name="firstName">
@@ -68,6 +76,10 @@ include '../views/navbar.php' ;
                         <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                     </button>
                 </form>
+
+                <div class="text-center mt-3">
+                    <p class="text-muted">Already have an account? <a href="login.php">Login here</a></p>
+                </div>
             </div>
         </div>
     </div>
